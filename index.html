@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101923">
+  <meta name="description" content="Sebuah kisah pribadi tentang kehilangan, perjalanan, pencarian diri, dan menemukan kembali hal-hal yang tak pernah benar-benar pergi.">
+  <title>Setelah Segala yang Tidak Aku Mengerti — Sebuah Cerita</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke cerita</a>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="wordmark" href="#home" data-home aria-label="Kembali ke sampul">
+      <span class="wordmark-mark" aria-hidden="true">S.</span>
+      <span class="wordmark-copy"><span>SEBUAH CATATAN</span><span>TENTANG PULANG</span></span>
+    </a>
+    <div class="header-tools">
+      <button class="text-button chapter-menu-trigger" id="chapterMenuToggle" type="button" aria-controls="chapterDrawer" aria-expanded="false">
+        <span class="menu-icon" aria-hidden="true"><i></i><i></i></span>
+        <span>DAFTAR BAB</span>
+      </button>
+      <span class="header-divider" aria-hidden="true"></span>
+      <button class="music-toggle" id="musicToggle" type="button" aria-label="Putar musik latar" aria-pressed="false">
+        <span class="music-icon" aria-hidden="true">♫</span>
+        <span id="musicToggleLabel">MUSIK MATI</span>
+      </button>
+      <label class="volume-control" for="musicVolume">
+        <span aria-hidden="true">VOL</span>
+        <input id="musicVolume" type="range" min="0" max="100" value="28" aria-label="Volume musik latar">
+        <output id="musicVolumeValue" for="musicVolume">28%</output>
+      </label>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="cover-screen is-active" id="home" aria-labelledby="coverTitle">
+      <div class="cover-layout">
+        <div class="cover-copy">
+          <h1 id="coverTitle">SETELAH<br>SEGALA YANG<br><em>TIDAK AKU</em><br>MENGERTI</h1>
+          <p class="cover-description">Sebuah kisah tentang kehilangan, perjalanan, pencarian diri, dan menemukan kembali hal-hal yang tak pernah benar-benar pergi.</p>
+          <button class="read-button" id="startReading" type="button">
+            <span>MULAI MEMBACA</span><span class="read-arrow" aria-hidden="true">→</span>
+          </button>
+          <p class="cover-note"><span class="note-mark" aria-hidden="true">✳</span> <span id="resumeHint">Bacalah perlahan. Tidak ada yang perlu dikejar.</span></p>
+          <p class="cover-credit"><span>Ditulis oleh Arofiu Rizki Samar CS</span><span>Palembang, 31-10-2026</span></p>
+        </div>
+        <figure class="cover-art">
+          <span class="cover-light" aria-hidden="true"></span>
+          <img src="Bangkit%20di%20Tengah%20Sorak%20Dunia.png" alt="Sampul cerita Bangkit di Tengah Sorak Dunia">
+          <figcaption><span>CATATAN PERJALANAN</span><span>I — IV · EPILOG</span></figcaption>
+        </figure>
+      </div>
+      <div class="cover-footer" aria-hidden="true">
+        <span>SEBUAH KISAH TENTANG KEHILANGAN, DAN JALAN PULANG</span>
+        <span class="scroll-hint">BUKA HALAMAN PERTAMA <i>↓</i></span>
+      </div>
+    </section>
+
+    <section class="reader-screen" id="reader" aria-label="Pembaca cerita" hidden>
+      <div class="reader-topline">
+        <button class="back-to-cover" id="backToCover" type="button"><span aria-hidden="true">←</span> KEMBALI KE SAMPUL</button>
+        <p class="reader-bookmark" id="readerBookmark">NASKAH ASLI <span>·</span> 5 BAGIAN</p>
+      </div>
+      <div class="reading-progress" aria-label="Perkembangan membaca">
+        <div class="reading-progress-fill" id="progressFill"></div>
+      </div>
+      <div class="reading-stage" id="readingStage" tabindex="-1" aria-live="polite"></div>
+      <nav class="page-navigation" aria-label="Navigasi halaman">
+        <button class="page-control previous-page" id="previousPage" type="button" aria-label="Halaman sebelumnya">
+          <span aria-hidden="true">←</span><span class="control-label">SEBELUMNYA</span>
+        </button>
+        <label class="page-picker">
+          <span>PILIH HALAMAN</span>
+          <select id="pageJump" aria-label="Pilih halaman"></select>
+        </label>
+        <button class="page-control next-page" id="nextPage" type="button" aria-label="Halaman berikutnya">
+          <span class="control-label">BERIKUTNYA</span><span aria-hidden="true">→</span>
+        </button>
+      </nav>
+      <p class="keyboard-hint">GUNAKAN TOMBOL <kbd>←</kbd> DAN <kbd>→</kbd> UNTUK BERPINDAH</p>
+    </section>
+  </main>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside class="chapter-drawer" id="chapterDrawer" aria-label="Daftar bab" aria-hidden="true" inert>
+    <div class="drawer-heading">
+      <div><p class="eyebrow">JELAJAHI CERITA</p><h2>Daftar bab</h2></div>
+      <button class="drawer-close" id="chapterMenuClose" type="button" aria-label="Tutup daftar bab">×</button>
+    </div>
+    <nav class="chapter-list" id="chapterList" aria-label="Pilih bab"></nav>
+    <p class="drawer-footnote">Tidak perlu terburu-buru sampai akhir.</p>
+  </aside>
+
+  <p class="audio-status" id="audioStatus" role="status" aria-live="polite"></p>
+
+  <audio id="backgroundMusic" src="The%201975%20-%20About%20You%20%28Official%29.mp3" preload="auto" loop></audio>
+  <script src="story-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
